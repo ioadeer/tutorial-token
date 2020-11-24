@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // for more about customizing your Truffle configuration!
@@ -9,10 +11,14 @@ module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 9545,
+      // ganache
+      port: 7545,
+      // truffle-develop 
+      //port: 9545,
       network_id: "*" // Match any network id
     }
   },
+  contracts_build_directory: path.join(__dirname, "client3/src/contracts"),
   //networks: {
   //  development: {
   //    host: "127.0.0.1",

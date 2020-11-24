@@ -28,26 +28,4 @@ contract TutorialToken is ERC20, AccessControl {
     _burn(from, amount);
   }
 
-  // al pedo
-  function grantMinterRole(address account) public {
-    require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Only admin can grant role");
-    _setupRole(MINTER_ROLE, account);
-  }
-
-  //al pedo
-  function grantBurnerRole(address account) public {
-    require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Only admin can grant role");
-    _setupRole(BURNER_ROLE, account);
-  }
-  //constructor() public ERC20("Gold", "GLD"){
-  //  _mint(msg.sender, INITIAL_SUPPLY);
-  //  _setupDecimals(2);
-  //}
-  //function _mintMinerReward() public{
-  //  mint(msg.sender, 1000);
-  //}
-  //function _beforeTokenTransfer(address from, address to, uint256 value) internal virtual override {
-  //  _mintMinerReward();
-  //  super._beforeTokenTransfer(from, to, value);
-  //}
 }
